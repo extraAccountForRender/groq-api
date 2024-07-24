@@ -7,8 +7,8 @@ class ConversationBot:
         self.client = Groq(api_key=api_key)
         self.prompt = """
         Rules:
-        1. whatever reply you give me, make sure to enclose headings with <h></h>, subheadings within <sb></sb> and content within <i></i>. 
-        2. Do not give any other detail or message from your side and keep the answers short.
+        1. whatever reply you give me, make sure to enclose headings with <h><h>, subheadings within <sb><sb> and content within <i><i>. 
+        2. Do not give any other detail or message from your side.
         """
 
 
