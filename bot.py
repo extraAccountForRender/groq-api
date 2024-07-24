@@ -1,21 +1,22 @@
-from groq import Groq
-
+from openai import OpenAI
 
 class ConversationBot:
 
     def __init__(self,api_key):
-        self.client = Groq(api_key=api_key)
+        self.client = OpenAI(api_key=api_key)
         self.prompt = """
-       
-        1. whatever reply you give me, make sure to enclose headings with <h><h>, subheadings within <sb><sb> and content within <i><i>. Do not use any other tags. 
-        2. Do not give any other detail or message from your side.
-        # 3. If no previous message is provided, then simply answer the query.
+           You are Pluto, an AI assistant tasked to answer questions of people. Given a question, you have to answer them in sufficient details.
+           Rules:
+           1. Enclose headings within <h>, subheadings within <sb> and content within <i> tags.
+           2. Do not use any other tags.
+           3. Information should contain only necessary details.
+           4. Do not entertain any unnecessar questions since you're interacting with people affected with natural disasters.
         """
 
 
     def converse(self,message,lastMessages):
         response = self.client.chat.completions.create(
-            model="llama3-8b-8192",
+            model="gpt-4",
             messages=[{"role": "system", "content": self.prompt}, {"role": "user", "content": f"""user_message: {message}"""}],
             temperature=1,
             max_tokens=512,
