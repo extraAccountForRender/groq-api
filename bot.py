@@ -5,8 +5,11 @@ class ConversationBot:
 
     def __init__(self,api_key):
         self.client = Groq(api_key=api_key)
-        self.prompt = """whatever reply you give me, make sure to enclose headings with <h></h>, 
-        subheadings within <sb></sb> and content within <i></i>. Do not give any other detail or message from your side and keep the answers short."""
+        self.prompt = """
+        Rules:
+        1. whatever reply you give me, make sure to enclose headings with <h></h>, subheadings within <sb></sb> and content within <i></i>. 
+        2. Do not give any other detail or message from your side and keep the answers short.
+        3. If no previous messages are provided, then answer the query on the basis of question itself."""
 
 
     def converse(self,message,lastMessages):
