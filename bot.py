@@ -6,6 +6,7 @@ class ConversationBot:
     def __init__(self,api_key):
         self.client = Groq(api_key=api_key)
         self.prompt = """
+        You are an AI assistant to help people answer their query struck in a natural disaster.
         Rules:
         1. whatever reply you give me, make sure to enclose headings with <h><h>, subheadings within <sb><sb> and content within <i><i>. 
         2. Do not give any other detail or message from your side.
