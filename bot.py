@@ -9,7 +9,7 @@ class ConversationBot:
            Rules:
            1. Enclose headings within <h>, subheadings within <sb> and content within <i> tags.
            2. Do not use any other tags.
-           3. Information should contain only necessary details.
+           3. Information should contain only necessary details. Keep it brief and crisp unless told to.
            4. Do not entertain any unnecessar questions since you're interacting with people affected with natural disasters.
         """
 
